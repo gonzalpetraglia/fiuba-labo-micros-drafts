@@ -12,27 +12,27 @@ m: BYTE 1
 CSEG
 	rjmp main
 	; Leave space to int vectors
-
+	; .org int_vectors_size
 main:
 	; load in x pointer to v
 	ldi XH, HIGH(v)
 	ldi XL, LOW(v)
 	; load values
-	ldi r18, 20
+	ldi r18, 129
 	st X+, r18
-	ldi r18, 20
+	ldi r18, 129
 	st X+, r18
-	ldi r18, 20
+	ldi r18, 129
 	st X+, r18
-	ldi r18, 20
+	ldi r18, 129
 	st X+, r18
-	ldi r18, 20
+	ldi r18, 129
 	st X+, r18
-	ldi r18, 20
+	ldi r18, 129
 	st X+, r18
-	ldi r18, 20
+	ldi r18, 129
 	st X+, r18
-	ldi r18, 20
+	ldi r18, 129
 	st X+, r18
 
 	; load in x pointer to v
@@ -46,4 +46,4 @@ main:
 	st Y, r19
 keepBlinking:
 	call blink
-	rjmp keepBlinking
+	rjmp average
